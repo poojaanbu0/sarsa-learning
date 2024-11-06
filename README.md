@@ -9,28 +9,27 @@ The problem might involve teaching an agent to interact optimally with an enviro
 
 ## SARSA LEARNING ALGORITHM
 
+1. Initialize the Q-table, learning rate α, discount factor γ, exploration rate ϵ, and the number of episodes.
 
-  1.Initialize the Q-table, learning rate α, discount factor γ, exploration rate ϵ, and the number of episodes.
+2. For each episode, start in an initial state s, and choose an action a using the ε-greedy policy.
 
-  2. For each episode, start in an initial state s, and choose an action a using the ε-greedy policy.
+3. Take action a, observe the reward r and the next state s′ , and choose the next action a′ using the ε-greedy policy.
 
-  3.Take action a, observe the reward r and the next state s′ , and choose the next action a′ using the ε-greedy policy.
+4. Update the Q-value for the state-action pair (s,a) using the SARSA update rule.
 
-  4.Update the Q-value for the state-action pair (s,a) using the SARSA update rule.
+5. Update the current state to s′ and the current action to a′.
 
-  5.Update the current state to s′ and the current action to a′.
+6. Repeat steps 3-5 until the episode reaches a terminal state.
 
-  6.Repeat steps 3-5 until the episode reaches a terminal state.
+7. After each episode, decay the exploration rate 𝜖 and learning rate α, if using decay schedules.
 
-  7.After each episode, decay the exploration rate 𝜖 and learning rate α, if using decay schedules.
-
-  8.Return the Q-table and the learned policy after completing all episodes.
+8. Return the Q-table and the learned policy after completing all episodes.
 
 
 ## SARSA LEARNING FUNCTION
 ### Name: POOJA A
 ### Register Number: 212222240072
-```
+```python
 def sarsa(env,
           gamma=1.0,
           init_alpha=0.5,
